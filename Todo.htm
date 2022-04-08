@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <title>TODO LIST</title>
+</head>
+<body class container>
+    <h3>TODO LIST</h3>
+    <ul id="ToDos">
+   </ul>
+    <form>
+        <input type="text"id="textImport" placeholder="enter todo"/>
+        <button type="button" class="btn btn-primary">Normal</button>
+
+    </form>
+    <script>
+        document.getElementById("Enter").addEventListener('click',(e)=>{
+             let item= document.getElementById("textImport").value;
+             arrayToDo.push(item);
+             let ToDolist=document.querySelector('#ToDos')
+             ToDolist.appendChild(createToDoItem(item));
+            e.preventDefault();
+        });
+        let arrayToDo= [];
+        function createToDoItem(item){
+            let li=document.createElement('li');
+            li.textContent=item;
+            return li;
+        }
+    </script>
+</body>
+</html>
